@@ -1,10 +1,7 @@
 ﻿// Напишите программу, которая задает массив из 8 элементов и выводит их на экран. 
+// Если что рандомные числа в задании специально ограничены трехначными числами
 
-// Тоже самое практически, только нужно будет ввести 8 неслучайных элементов, только 
-// Нужно будет 8 чисел прочитать, читать тоже можно в цикле, т.е Console.ReadLine int.Parse и сразу же в int.Parse присваивание в элемент массива. 
-// Все это можно сделать в одной итерации цикла.  
-
-int[] CreateArray()                                   // фунция создающая массив
+int[] CreateArray()                                  
 {
 
     int[] array = new int[8];
@@ -12,11 +9,12 @@ int[] CreateArray()                                   // фунция созда
     var random = new Random();
 
     for (int i = 0; i < 8; i++)
-        array[i] = random.Next(0, 2);
+        array[i] = random.Next(0, 1000);
     return array;
 }
 
-var array = CreateArray();                           // выводим функцию на экран
+var array = CreateArray();                           
 
 for (int i = 0; i < 8; i++)
-    Console.Write(array[i]);
+    Console.Write(" " + array[i]);
+

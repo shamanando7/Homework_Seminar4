@@ -1,4 +1,36 @@
 ﻿// Напишите программу, которая принимает на вход число и выдает сумму цифр в числе
 
-// Нужно будет пробежаться по разрядам (так как это делали в первой задаче). Мы считаем не с первого разряда, а с последнего с помощью цикла while.
-//  452 - сначала получаем 2 с помощью остатка деления на 10, далее делим число на 10, у нас остается 45, далее берем остаток от 45 и получаем 5, и 45 делим на 10 и получаем 4. 
+
+
+int SumAllNumbers(int number)
+{
+    int index = number.ToString().Length;
+    int count = 0;
+    int result = 0;
+    int digit = number;
+    while (count < index)
+    {
+        digit = number % 10;
+        result = digit + result;
+        number = number/ 10;
+        count++;
+    }
+    return result;
+}
+
+Console.WriteLine("vvedite chislo");
+int digit = int.Parse(Console.ReadLine()!);
+
+if (digit == 0)
+{
+    Console.WriteLine("0");
+    return;
+}
+else if (digit < 0)
+{
+    //  digit = digit * -1;
+    Console.WriteLine("vvedite polozshitelnoe chislo");
+    return;
+}
+
+Console.WriteLine(SumAllNumbers(digit));
